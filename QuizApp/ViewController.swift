@@ -5,6 +5,9 @@
 //  Created by Abdul Dayur on 6/5/21.
 //
 
+// Created a custom Protocol, so that when the background thread comes back from fetching the json data
+// It has a reference to the view controller. So they can notify that vc and pass the data to it for display.
+
 import UIKit
 
 class ViewController: UIViewController, QuizProtocol {
@@ -29,6 +32,8 @@ class ViewController: UIViewController, QuizProtocol {
     
     func questionsRetrieved(_ questions: [Question]) {
         print("questions retrieved from model!")
+        print(questions)
+        
     }
     
 }

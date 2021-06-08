@@ -15,6 +15,7 @@
 		0F690A19266C94D8009E6B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F690A17266C94D8009E6B3F /* LaunchScreen.storyboard */; };
 		0F690A22266C95CC009E6B3F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F690A21266C95CC009E6B3F /* Question.swift */; };
 		0F690A25266D8D03009E6B3F /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F690A24266D8D03009E6B3F /* QuizModel.swift */; };
+		0F690A29266EC43E009E6B3F /* QuestionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F690A28266EC43E009E6B3F /* QuestionData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0F690A1A266C94D8009E6B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F690A21266C95CC009E6B3F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		0F690A24266D8D03009E6B3F /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
+		0F690A28266EC43E009E6B3F /* QuestionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				0F690A10266C94D7009E6B3F /* ViewController.swift */,
 				0F690A21266C95CC009E6B3F /* Question.swift */,
 				0F690A24266D8D03009E6B3F /* QuizModel.swift */,
+				0F690A28266EC43E009E6B3F /* QuestionData.json */,
 				0F690A12266C94D7009E6B3F /* Main.storyboard */,
 				0F690A15266C94D8009E6B3F /* Assets.xcassets */,
 				0F690A17266C94D8009E6B3F /* LaunchScreen.storyboard */,
@@ -133,6 +136,7 @@
 				0F690A19266C94D8009E6B3F /* LaunchScreen.storyboard in Resources */,
 				0F690A16266C94D8009E6B3F /* Assets.xcassets in Resources */,
 				0F690A14266C94D7009E6B3F /* Main.storyboard in Resources */,
+				0F690A29266EC43E009E6B3F /* QuestionData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
