@@ -12,6 +12,9 @@ import UIKit
 
 class ViewController: UIViewController, QuizProtocol {
     
+    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
+    
     
     var model = QuizModel()
     var questions = [Question]()
