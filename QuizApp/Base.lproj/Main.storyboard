@@ -98,6 +98,84 @@
             </objects>
             <point key="canvasLocation" x="139" y="94"/>
         </scene>
+        <!--Result View Controller-->
+        <scene sceneID="waw-qw-Iby">
+            <objects>
+                <viewController storyboardIdentifier="ResultVC" id="HNx-F4-xYf" customClass="ResultViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qcx-Pt-P6J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hv-s5-B9y" userLabel="DimView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4Q-JU-eu4" userLabel="DialogView">
+                                <rect key="frame" x="40" y="144" width="334" height="618"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h7y-iQ-ovX">
+                                        <rect key="frame" x="50" y="50" width="234" height="518"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdp-U2-R79">
+                                                <rect key="frame" x="83.5" y="0.0" width="67.5" height="172.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-0Z-Vj9">
+                                                <rect key="frame" x="96.5" y="172.5" width="41.5" height="173"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNZ-yo-1Qt">
+                                                <rect key="frame" x="94" y="345.5" width="46" height="172.5"/>
+                                                <state key="normal" title="Next"/>
+                                                <connections>
+                                                    <action selector="dismissTapped:" destination="HNx-F4-xYf" eventType="touchUpInside" id="z4a-yq-aIQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rd2-0Z-Vj9" firstAttribute="width" secondItem="h7y-iQ-ovX" secondAttribute="width" multiplier="0.17735" id="6zx-Sc-fzx"/>
+                                            <constraint firstItem="WNZ-yo-1Qt" firstAttribute="width" secondItem="h7y-iQ-ovX" secondAttribute="width" multiplier="0.196581" id="ime-nT-1Rh"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="h7y-iQ-ovX" secondAttribute="bottom" constant="50" id="BUi-07-00c"/>
+                                    <constraint firstAttribute="trailing" secondItem="h7y-iQ-ovX" secondAttribute="trailing" constant="50" id="TAw-H6-7gj"/>
+                                    <constraint firstItem="h7y-iQ-ovX" firstAttribute="leading" secondItem="D4Q-JU-eu4" secondAttribute="leading" constant="50" id="cSK-Se-DYp"/>
+                                    <constraint firstItem="h7y-iQ-ovX" firstAttribute="top" secondItem="D4Q-JU-eu4" secondAttribute="top" constant="50" id="nAb-4U-0M2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fzT-sD-kkb"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fzT-sD-kkb" firstAttribute="bottom" secondItem="D4Q-JU-eu4" secondAttribute="bottom" constant="100" id="6hn-XY-dL3"/>
+                            <constraint firstItem="0hv-s5-B9y" firstAttribute="top" secondItem="Qcx-Pt-P6J" secondAttribute="top" id="9xs-5P-91q"/>
+                            <constraint firstItem="D4Q-JU-eu4" firstAttribute="top" secondItem="fzT-sD-kkb" secondAttribute="top" constant="100" id="NvJ-OU-OKX"/>
+                            <constraint firstItem="fzT-sD-kkb" firstAttribute="trailing" secondItem="D4Q-JU-eu4" secondAttribute="trailing" constant="40" id="YtT-mH-DKD"/>
+                            <constraint firstAttribute="trailing" secondItem="0hv-s5-B9y" secondAttribute="trailing" id="bLx-vc-f7c"/>
+                            <constraint firstAttribute="bottom" secondItem="0hv-s5-B9y" secondAttribute="bottom" id="dIe-7C-klC"/>
+                            <constraint firstItem="0hv-s5-B9y" firstAttribute="leading" secondItem="Qcx-Pt-P6J" secondAttribute="leading" id="sJk-2p-kAu"/>
+                            <constraint firstItem="D4Q-JU-eu4" firstAttribute="leading" secondItem="fzT-sD-kkb" secondAttribute="leading" constant="40" id="uZa-Qv-SkK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dailogView" destination="D4Q-JU-eu4" id="OJS-km-cgS"/>
+                        <outlet property="dimView" destination="0hv-s5-B9y" id="jF4-Fq-yEC"/>
+                        <outlet property="feedBackLabel" destination="rd2-0Z-Vj9" id="OYL-mm-75u"/>
+                        <outlet property="nextButton" destination="WNZ-yo-1Qt" id="oUz-p2-0Ir"/>
+                        <outlet property="titleLabel" destination="Xdp-U2-R79" id="8lJ-Sd-WDb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wmc-UN-5QD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="97"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BackgroundImage" width="375" height="667"/>

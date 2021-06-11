@@ -19,10 +19,17 @@ class ViewController: UIViewController, QuizProtocol, UITableViewDataSource, UIT
     var model = QuizModel()
     var questions = [Question]()
     var currentQuestionIndex = 0
-    var numsCorrect = 0 
+    var numsCorrect = 0
+    
+    var resultDialog: ResultViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Initialize the result dialog
+        resultDialog = storyboard?.instantiateViewController(identifier: "ResultVC") as? ResultViewController
+        resultDialog?.modalPresentationStyle = .overCurrentContext
+        
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -100,9 +107,14 @@ class ViewController: UIViewController, QuizProtocol, UITableViewDataSource, UIT
         let question = questions[currentQuestionIndex]
         
         if question.correctAnswerIndex == indexPath.row{
-            alert("CORRECT", "User got it right")
+            print("CORRECT", "User got it right")
         } else {
-            alert("WRONG", question.feedback!)
+            print("WRONG", question.feedback!)
+        }
+        
+        // Show the popup
+        if resultDialog != nil {
+            present(resultDialog!, animated: true, completion: nil)
         }
         
         currentQuestionIndex += 1
