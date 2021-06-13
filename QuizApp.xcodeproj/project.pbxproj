@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F5F322926717ED6006B4CD5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F322826717ED6006B4CD5 /* ResultViewController.swift */; };
+		0F5F322C2675D645006B4CD5 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F322B2675D644006B4CD5 /* StateManager.swift */; };
 		0F690A0D266C94D7009E6B3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F690A0C266C94D7009E6B3F /* AppDelegate.swift */; };
 		0F690A0F266C94D7009E6B3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F690A0E266C94D7009E6B3F /* SceneDelegate.swift */; };
 		0F690A11266C94D7009E6B3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F690A10266C94D7009E6B3F /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		0F5F322826717ED6006B4CD5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		0F5F322B2675D644006B4CD5 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		0F690A09266C94D7009E6B3F /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F690A0C266C94D7009E6B3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F690A0E266C94D7009E6B3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				0F690A0E266C94D7009E6B3F /* SceneDelegate.swift */,
 				0F690A10266C94D7009E6B3F /* ViewController.swift */,
 				0F5F322826717ED6006B4CD5 /* ResultViewController.swift */,
+				0F5F322B2675D644006B4CD5 /* StateManager.swift */,
 				0F690A21266C95CC009E6B3F /* Question.swift */,
 				0F690A24266D8D03009E6B3F /* QuizModel.swift */,
 				0F690A28266EC43E009E6B3F /* QuestionData.json */,
@@ -153,6 +156,7 @@
 				0F690A11266C94D7009E6B3F /* ViewController.swift in Sources */,
 				0F690A22266C95CC009E6B3F /* Question.swift in Sources */,
 				0F690A0D266C94D7009E6B3F /* AppDelegate.swift in Sources */,
+				0F5F322C2675D645006B4CD5 /* StateManager.swift in Sources */,
 				0F690A0F266C94D7009E6B3F /* SceneDelegate.swift in Sources */,
 				0F690A25266D8D03009E6B3F /* QuizModel.swift in Sources */,
 				0F5F322926717ED6006B4CD5 /* ResultViewController.swift in Sources */,

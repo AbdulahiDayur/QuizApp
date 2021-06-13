@@ -63,6 +63,17 @@ class ViewController: UIViewController, QuizProtocol, ResultViewControllerProtoc
         // Get reference to the questions. Passed from quizmodel
         self.questions = questions
         
+        // Check if we should restore state before showing 1st question
+        let savedIndex = StateManager.retrieveValue(key: StateManager.questionIndexKey) as? Int
+        
+        // Set the current question to the saved index
+        if savedIndex != nil && savedIndex! < self.questions.count {
+            currentQuestionIndex = savedIndex!
+        }
+        
+        // Retrieve numCorrert from storage
+        numsCorrect = StateManager.retrieveValue(key: StateManager.numCorrectKey) as! Int
+        
         // Display the first question
         displayQuestion()
         
@@ -132,6 +143,7 @@ class ViewController: UIViewController, QuizProtocol, ResultViewControllerProtoc
             
             
             present(resultDialog!, animated: true, completion: nil)
+            
         }
         
     }
@@ -153,6 +165,9 @@ class ViewController: UIViewController, QuizProtocol, ResultViewControllerProtoc
                 resultDialog!.buttonText = "Restart"
         
                 present(resultDialog!, animated: true, completion: nil)
+                
+                // Clear state
+                StateManager.clearState()
             }
             
         } else if currentQuestionIndex < questions.count {
@@ -164,6 +179,9 @@ class ViewController: UIViewController, QuizProtocol, ResultViewControllerProtoc
             currentQuestionIndex = 0
             displayQuestion()
         }
+        
+        // Save state data
+        StateManager.saveState(numCorrect: numsCorrect, questionIndex: currentQuestionIndex)
         
     }
 }
