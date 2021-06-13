@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, QuizProtocol, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, QuizProtocol, ResultViewControllerProtocol, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var tableView: UITableView!
@@ -37,6 +37,8 @@ class ViewController: UIViewController, QuizProtocol, UITableViewDataSource, UIT
         // Set up the model
         model.delegate = self
         model.getQuestions()
+        
+        resultDialog?.delegate = self
         
     }
     
@@ -65,6 +67,8 @@ class ViewController: UIViewController, QuizProtocol, UITableViewDataSource, UIT
         displayQuestion()
         
     }
+    
+    
     
     // MARK: - UITableView Delegate Methods
     
@@ -103,31 +107,64 @@ class ViewController: UIViewController, QuizProtocol, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var title = ""
+        
         // check if tapped row is correct ans
         let question = questions[currentQuestionIndex]
         
         if question.correctAnswerIndex == indexPath.row{
             print("CORRECT", "User got it right")
+            title = "CORRECT"
+            numsCorrect += 1
         } else {
             print("WRONG", question.feedback!)
+            title = "WRONG"
         }
         
         // Show the popup
         if resultDialog != nil {
+            
+            resultDialog!.titleText = title
+            resultDialog!.feedbackText = question.feedback!
+            resultDialog!.buttonText = "Next"
+                
+            
+            
             present(resultDialog!, animated: true, completion: nil)
         }
         
+    }
+    
+    // MARK: - ResultProtocol Methods
+    
+    func dialogDismissed() {
+        
         currentQuestionIndex += 1
         
-        displayQuestion()
+        if currentQuestionIndex == questions.count {
+            // The user has answered the last question
+            // Show a summary Dialog
+            // Show the popup
+            if resultDialog != nil {
+                
+                resultDialog!.titleText = "Summary"
+                resultDialog!.feedbackText = "You got \(numsCorrect) correct out of \(questions.count) questions"
+                resultDialog!.buttonText = "Restart"
+        
+                present(resultDialog!, animated: true, completion: nil)
+            }
+            
+        } else if currentQuestionIndex < questions.count {
+            
+            // Display next question
+            displayQuestion()
+        } else {
+            numsCorrect = 0
+            currentQuestionIndex = 0
+            displayQuestion()
+        }
         
     }
-    
-    func alert(_ title: String, _ message: String) {
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(ac, animated: true)
-    }
-    
 }
 
